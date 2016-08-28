@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e -x
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd ${DIR}/..
 
@@ -16,3 +17,7 @@ sed -i.bak 's#%gcr.io/image:version%#${imageTag}#' ${deploymentArtifactsFolder}/
 sed -i.bak 's#%namespace%#${deploymentNS}#' ${deploymentArtifactsFolder}/*.yaml
 sed -i.bak 's#%appName%#${appName}#' ${deploymentArtifactsFolder}/*.yaml
 sed -i.bak 's#%deploymentName%#${deploymentName}#' ${deploymentArtifactsFolder}/*.yaml
+
+kubectl version
+kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml --record
+kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-service-resources.yaml --record
