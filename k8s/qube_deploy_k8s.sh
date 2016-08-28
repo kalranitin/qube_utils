@@ -12,7 +12,7 @@ deploymentTemplate=$6
 
 mkdir -p $deploymentArtifactsFolder
 
-cp -R ${deploymentTemplate}/ ${deploymentArtifactsFolder}
+cp -R ${deploymentTemplate}/* ${deploymentArtifactsFolder}
 pwd
 tree ${deploymentTemplate}/
 tree ${deploymentArtifactsFolder}
