@@ -13,6 +13,9 @@ deploymentTemplate=$6
 mkdir -p $deploymentArtifactsFolder
 
 cp -R ${deploymentTemplate}/ ${deploymentArtifactsFolder}
+pwd
+tree ${deploymentTemplate}/
+tree ${deploymentArtifactsFolder}
 sed -i.bak 's#%gcr.io/image:version%#${imageTag}#' ${deploymentArtifactsFolder}/*.yaml
 sed -i.bak 's#%namespace%#${deploymentNS}#' ${deploymentArtifactsFolder}/*.yaml
 sed -i.bak 's#%appName%#${appName}#' ${deploymentArtifactsFolder}/*.yaml
