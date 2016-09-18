@@ -1,5 +1,5 @@
-#./yaql-parser.py --file test.yaml --expression "$.bake.destinations.len()"
 #!/usr/bin/python
+#./yaql-parser.py --file test.yaml --expression "$.bake.destinations.len()"
 import yaql
 import yaml
 import getopt
