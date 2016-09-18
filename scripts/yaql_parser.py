@@ -10,7 +10,8 @@ def parseYAQL(file, exp):
     engine = yaql.factory.YaqlFactory().create()
     expression = engine(exp)
     #print file + ":" + exp
-    print expression.evaluate(data=data_source)
+    print expression.evaluate(data=data_source), end="", flush=True
+    
     #print file + ":" + expression
 
 
