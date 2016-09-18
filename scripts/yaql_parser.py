@@ -1,5 +1,6 @@
 #!/usr/bin/python
 #./yaql-parser.py --file test.yaml --expression "$.bake.destinations.len()"
+from __future__ import print_function
 import yaql
 import yaml
 import getopt
@@ -10,8 +11,7 @@ def parseYAQL(file, exp):
     engine = yaql.factory.YaqlFactory().create()
     expression = engine(exp)
     #print file + ":" + exp
-    print expression.evaluate(data=data_source), 
-    
+    print ( expression.evaluate(data=data_source) , end='')    
     #print file + ":" + expression
 
 
