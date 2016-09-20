@@ -1,0 +1,6 @@
+version: '2'
+services:
+    landingpage-svc:
+        image: %gcr.io/image:version%
+        ports:
+            - "443"
