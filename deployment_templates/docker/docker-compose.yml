@@ -1,6 +1,9 @@
 version: '2'
 services:
-    landingpage-svc:
+    %srvname%:
         image: %gcr.io/image:version%
         ports:
             - "443"
+        labels:
+          interlock.hostname: "%name%"
+          interlock.domain:   "example.com"
