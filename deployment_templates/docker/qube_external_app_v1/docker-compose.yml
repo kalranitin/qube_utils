@@ -1,6 +1,6 @@
 version: '2'
 services:
-    %svcname%:
+    %srvname%:
         image: %dtr/image:version%
         ports:
             - 443
