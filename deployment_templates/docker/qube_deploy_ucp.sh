@@ -10,6 +10,7 @@ endpointDomain=$4
 swarmHost=$5
 deploymentArtifactsFolder=$6
 deploymentTemplate=$7
+deploymentName=$8
 
 mkdir -p $deploymentArtifactsFolder
 
@@ -28,4 +29,4 @@ cat ${deploymentArtifactsFolder}/docker-compose.yml
 export SWARM_HOST=${swarmHost}
 
 cd ${deploymentArtifactsFolder}
-docker-compose up -d
+docker-compose --project-name ${deploymentName} up -d
