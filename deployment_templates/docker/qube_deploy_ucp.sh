@@ -27,4 +27,5 @@ cat ${deploymentArtifactsFolder}/docker-compose.yml
 
 export SWARM_HOST=${swarmHost}
 
+cd ${deploymentArtifactsFolder}
 docker-compose up -d
