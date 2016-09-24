@@ -22,12 +22,12 @@ sed -i.bak "s#%svcname%#${appName}#" ${deploymentArtifactsFolder}/*.yml
 sed -i.bak "s#%endpoint_name%#${endpointName}#" ${deploymentArtifactsFolder}/*.yml
 sed -i.bak "s#%endpoint_domain%#${endpointDomain}#" ${deploymentArtifactsFolder}/*.yml
 
-// to-be-deleted
+#to-be-deleted
 cat ${deploymentArtifactsFolder}/docker-compose.yml
 
 export SWARM_HOST=${swarmHost}
 
-// to-be-deleted
+#to-be-deleted
 echo $SWARM_HOST
 
 docker-compose up -d
