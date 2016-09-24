@@ -27,7 +27,4 @@ cat ${deploymentArtifactsFolder}/docker-compose.yml
 
 export SWARM_HOST=${swarmHost}
 
-#to-be-deleted
-echo $SWARM_HOST
-
 docker-compose up -d
