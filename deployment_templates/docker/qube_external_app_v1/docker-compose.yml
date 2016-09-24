@@ -11,3 +11,4 @@ services:
           interlock.ssl_cert: "/certs/cert.pem"
           interlock.ssl_cert_key: "/certs/key.pem"
           interlock.ssl_backend: "1"
+          interlock.ssl_only: "1"
