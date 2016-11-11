@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: %deploymentName%
+  labels:
+    app: %appName%
+  namespace: %namespace%
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: %appName%
+      namespace: %namespace%
+    spec:
+      containers:
+      - name: %appName%
+        image: %gcr.io/image:version%
+        ports:
+        - containerPort: 443
+        resources:
+          limits:
+            cpu: 100m
+        env:  (( grab environment_variables.env ))
+        volumeMounts:
+            - name: qube-secrets-token-volume
+              mountPath: /secrets/qube_secrets
+              readOnly: true
+      volumes:
+        - name: qube-secrets-token-volume
+          secret:
+            secretName: qube-vault-token

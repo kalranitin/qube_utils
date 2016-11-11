@@ -1,0 +1,8 @@
+environment_variables :
+   env :
+     - <<: ((merge))
+     - name: VAULT_TOKEN
+       valueFrom:
+         secretKeyRef:
+           name: qube-vault-token
+           key: vault.token
