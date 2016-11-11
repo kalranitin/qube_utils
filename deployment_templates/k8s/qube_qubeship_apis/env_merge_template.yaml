@@ -13,4 +13,4 @@ environment_variables :
        valueFrom:
          secretKeyRef:
            name: qube-vault-token
-           key: vault_qubeship_k8s2.token
+           key: vault-qubeship-k8s2.token
