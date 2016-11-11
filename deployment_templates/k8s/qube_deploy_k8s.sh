@@ -28,6 +28,7 @@ spiff merge ${deploymentArtifactsFolder}/merge_template.yaml qube.yaml > result_
 spruce merge --prune environment_variables result_env.yaml ${deploymentArtifactsFolder}/kube-nonservice-resources.template.yaml > ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml
 fi
 sleep 300
+
 kubectl version
 kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml --record
 kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-service-resources.yaml --record
