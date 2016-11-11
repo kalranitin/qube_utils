@@ -12,8 +12,8 @@ deploymentTemplate=$6
 workspace=$7
 envType=$8
 envId=$9
-tenant=$10
-provider=$11
+tenant=${10}
+provider=${11}
 
 mkdir -p $deploymentArtifactsFolder
 
