@@ -2,7 +2,7 @@ environment_variables :
    env :
      - <<: ((merge))
      - name:  ENV_TYPE
-       value: %envCategory%
+       value: %envType%
      - name: ENV_ID
        value: %envId%
      - name: TENANT
