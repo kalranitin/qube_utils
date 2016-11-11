@@ -1,6 +1,14 @@
 environment_variables :
    env :
      - <<: ((merge))
+     - name:  ENV_TYPE
+       value: %envCategory%
+     - name: ENV_ID
+       value: %envId%
+     - name: TENANT
+       value: %tenant%
+     - name: ENV_PROVIDER
+       value: %envProvider%
      - name: VAULT_TOKEN
        valueFrom:
          secretKeyRef:

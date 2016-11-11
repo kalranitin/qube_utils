@@ -10,6 +10,10 @@ deploymentName=$4
 deploymentArtifactsFolder=$5
 deploymentTemplate=$6
 workspace=$7
+envType=$8
+envId=$9
+tenant=$10
+provider=$11
 
 mkdir -p $deploymentArtifactsFolder
 
@@ -21,6 +25,10 @@ sed -i.bak "s#%gcr.io/image:version%#${imageTag}#" ${deploymentArtifactsFolder}/
 sed -i.bak "s#%namespace%#${deploymentNS}#" ${deploymentArtifactsFolder}/*.yaml
 sed -i.bak "s#%appName%#${appName}#" ${deploymentArtifactsFolder}/*.yaml
 sed -i.bak "s#%deploymentName%#${deploymentName}#" ${deploymentArtifactsFolder}/*.yaml
+sed -i.bak "s#%envType%#${envType}#" ${deploymentArtifactsFolder}/*.yaml
+sed -i.bak "s#%envId%#${envId}#" ${deploymentArtifactsFolder}/*.yaml
+sed -i.bak "s#%tenant%#${tenant}#" ${deploymentArtifactsFolder}/*.yaml
+sed -i.bak "s#%envProvider%#${provider}#" ${deploymentArtifactsFolder}/*.yaml
 
 if [ $deploymentTemplate == "qube_qubeship_apis" ]; then
 cp $workspace/qube.yaml .
