@@ -23,7 +23,7 @@ sed -i.bak "s#%appName%#${appName}#" ${deploymentArtifactsFolder}/*.yaml
 sed -i.bak "s#%deploymentName%#${deploymentName}#" ${deploymentArtifactsFolder}/*.yaml
 
 if [ $deploymentTemplate == "qube_qubeship_apis" ]; then
-cp workspace/qube.yaml .
+cp $workspace/qube.yaml .
 spiff merge ${deploymentArtifactsFolder}/merge_template.yaml qube.yaml > result_env.yaml
 spruce merge --prune environment_variables result_env.yaml ${deploymentArtifactsFolder}/kube-nonservice-resources.template.yaml > ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml
 fi
