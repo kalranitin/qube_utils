@@ -16,7 +16,7 @@ spec:
       containers:
       - name: %appName%
         image: %gcr.io/image:version%
-        ports: (( grab container_ports ))
+        ports: (( grab ports.container_ports ))
         resources:
           limits:
             cpu: 100m
