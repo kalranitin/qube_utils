@@ -1,3 +1,4 @@
+ports: ((merge))
 environment_variables :
    env :
      - <<: ((merge))
@@ -14,3 +15,4 @@ environment_variables :
          secretKeyRef:
            name: qube-vault-token
            key: vault-qubeship-k8s2.token
+service_type: ((merge || ClusterIP))

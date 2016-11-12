@@ -7,8 +7,7 @@ metadata:
   name: %appName%-service
   namespace: %namespace%
 spec:
-  ports:
-  - port: 443
+  ports: (( grab ports.service_ports ))
   selector:
     app: %appName%
-  type: LoadBalancer
+  type: (( grab service_type ))

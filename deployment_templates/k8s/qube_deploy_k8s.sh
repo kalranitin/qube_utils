@@ -33,7 +33,8 @@ sed -i.bak "s#%envProvider%#${provider}#" ${deploymentArtifactsFolder}/*.yaml
 if [ $deploymentTemplate == "qube_qubeship_apis" ]; then
 cp $workspace/qube.yaml .
 spiff merge ${deploymentArtifactsFolder}/env_merge_template.yaml qube.yaml > result_env.yaml
-spruce merge --prune environment_variables result_env.yaml ${deploymentArtifactsFolder}/kube-nonservice-resources.template.yaml > ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml
+spruce merge --prune ports --prune service_type --prune environment_variables result_env.yaml ${deploymentArtifactsFolder}/kube-nonservice-resources.template.yaml > ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml
+spruce merge --prune ports --prune service_type --prune environment_variables result_env.yaml ${deploymentArtifactsFolder}/kube-service-resources.template.yaml > ${deploymentArtifactsFolder}/kube-service-resources.yaml
 fi
 
 kubectl version
