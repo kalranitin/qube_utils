@@ -1,0 +1,13 @@
+ports: ((merge))
+environment_variables :
+   env :
+     - <<: ((merge))
+     - name:  ENV_TYPE
+       value: %envType%
+     - name: ENV_ID
+       value: %envId%
+     - name: TENANT
+       value: %tenant%
+     - name: ENV_PROVIDER
+       value: %envProvider%
+service_type: (( merge || "ClusterIP" ))
