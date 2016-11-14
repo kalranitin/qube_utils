@@ -1,4 +1,4 @@
-ports: ((merge))
+ports: ((merge || nil))
 environment_variables :
    env :
      - <<: ((merge))
