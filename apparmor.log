@@ -1,0 +1,24 @@
+ 1 Time(s): audit: type=1400 audit(1473854574.089:113): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/cups/backend/cups-pdf" pid=31430 comm="apparmor_parser"
+
+ 1 Time(s): audit: type=1400 audit(1473854574.089:114): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=31430 comm="apparmor_parser"
+
+ 1 Time(s): audit: type=1400 audit(1473854574.089:115): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=31430 comm="apparmor_parser"
+ 
+  1 Time(s): audit: type=1400 audit(1473854574.089:113): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/cups/backend/cups-pdf" pid=31430 comm="apparmor_parser"
+
+ 1 Time(s): audit: type=1400 audit(1473854574.089:114): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=31430 comm="apparmor_parser"
+
+ 1 Time(s): audit: type=1400 audit(1473854574.089:115): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=31430 comm="apparmor_parser"
+ 
+  1 Time(s): audit: type=1400 audit(1473854574.089:113): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/cups/backend/cups-pdf" pid=31430 comm="apparmor_parser"
+
+ 1 Time(s): audit: type=1400 audit(1473854574.089:114): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=31430 comm="apparmor_parser"
+
+ 1 Time(s): audit: type=1400 audit(1473854574.089:115): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=31430 comm="apparmor_parser"
+ 
+ 
+  1 Time(s): audit: type=1400 audit(1473854574.089:113): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/cups/backend/cups-pdf" pid=31430 comm="apparmor_parser"
+
+ 1 Time(s): audit: type=1400 audit(1473854574.089:114): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=31430 comm="apparmor_parser"
+
+ 1 Time(s): audit: type=1400 audit(1473854574.089:115): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=31430 comm="apparmor_parser"
