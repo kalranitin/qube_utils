@@ -1,25 +1,37 @@
-#!/usr/bin/python
-#./yaql-parser.py --file test.yaml --expression "$.bake.destinations.len()"
+"""
+helper to parse yaml
+
+usage: yaql-parser.py --file test.yaml --expression "$.bake.destinations.len()
+"""
 from __future__ import print_function
-import yaql
-import yaml
+
 import getopt
 import sys
 
-def parseYAQL(file, exp):
+import yaml
+import yaql
+
+
+def usage():
+    print("usage: yaql-parser.py --file= --expression=")
+
+
+def parse_yaql(file, exp, debug):
+    if debug is 1:
+        print(file + ":" + exp)
     data_source = yaml.load(open(file, 'r'))
     engine = yaql.factory.YaqlFactory().create()
     expression = engine(exp)
-    #print file + ":" + exp
-    print ( expression.evaluate(data=data_source) , end='')    
-    #print file + ":" + expression
+    print(expression.evaluate(data=data_source), end='')
 
 
 def main(argv):
-    file=""
-    expression=""
+    file = ""
+    expression = ""
+    debug = 0
     try:
-        opts, args = getopt.getopt(argv, "hfe:d", ["help", "file=","expression="])
+        opts, _ = getopt.getopt(
+            argv, "hfe:d", ["help", "file=", "expression="])
     except getopt.GetoptError:
         usage()
         sys.exit(2)
@@ -28,14 +40,14 @@ def main(argv):
             usage()
             sys.exit()
         elif opt == '-d':
-            global _debug
-            _debug = 1
+            debug = 1
         elif opt in ("-f", "--file"):
             file = arg
         elif opt in ("-e", "--expression"):
-            expression=arg
+            expression = arg
 
-    parseYAQL(file, expression)    
+    parse_yaql(file, expression, debug)
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])
