@@ -1,6 +1,4 @@
-"""
-helper to parse yaml
-"""
+#!/usr/bin/python
 # usage:
 # yaql-parser.py --file test.yaml --expression "$.bake.destinations.len()
 from __future__ import print_function
