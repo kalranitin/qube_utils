@@ -25,7 +25,13 @@ spec:
             - name: qube-secrets-token-volume
               mountPath: /secrets/qube_secrets
               readOnly: true
+            - name: qube-conf-token-volume
+              mountPath: /secrets/qube_secrets
+              readOnly: true
       volumes:
         - name: qube-secrets-token-volume
           secret:
             secretName: qube-vault-token
+        - name: qube-conf-token-volume
+          secret:
+            secretName: qube-consul-token

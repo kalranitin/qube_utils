@@ -15,5 +15,10 @@ environment_variables :
          secretKeyRef:
            name: qube-vault-token
            key: vault-qubeship-k8s2.token
+     - name: CONF_SERVER_TOKEN
+       valueFrom:
+         secretKeyRef:
+           name: qube-consul-token
+           key: consul-qubeship.token
 service_type: ClusterIP
 # service_type: (( merge || "ClusterIP" ))
