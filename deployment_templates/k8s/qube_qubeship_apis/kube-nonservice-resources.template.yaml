@@ -26,7 +26,7 @@ spec:
               mountPath: /secrets/qube_secrets
               readOnly: true
             - name: qube-conf-token-volume
-              mountPath: /secrets/qube_secrets
+              mountPath: /secrets/qube_conf
               readOnly: true
       volumes:
         - name: qube-secrets-token-volume
