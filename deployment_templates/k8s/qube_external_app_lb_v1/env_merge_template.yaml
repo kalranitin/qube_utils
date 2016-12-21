@@ -1,0 +1,25 @@
+ports: 
+  container_ports:
+    - name: https
+      containerPort: 443
+      protocol: TCP
+    -  <<: (( merge ))
+
+  service_ports:
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: 443
+    -  <<: (( merge ))
+environment_variables :
+   env :
+     - <<: (( merge || nil  ))
+     - name:  ENV_TYPE
+       value: %envType%
+     - name: ENV_ID
+       value: %envId%
+     - name: TENANT
+       value: %tenant%
+     - name: ENV_PROVIDER
+       value: %envProvider%
+service_type: (( merge || "ClusterIP" ))

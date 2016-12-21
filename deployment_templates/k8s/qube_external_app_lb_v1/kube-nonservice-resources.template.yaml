@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: %deploymentName%
+  labels:
+    app: %appName%
+  namespace: %namespace%
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: %appName%
+      namespace: %namespace%
+    spec:
+      containers:
+      - name: %appName%
+        image: %gcr.io/image:version%
+        ports: (( grab ports.container_ports ))
+        env:  (( grab environment_variables.env ))
+        resources:
+          limits:
+            cpu: 100m

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: %appName%
+  name: %appName%-service
+  namespace: %namespace%
+spec:
+  ports: (( grab ports.service_ports ))
+  selector:
+    app: %appName%
+  type: LoadBalancer
