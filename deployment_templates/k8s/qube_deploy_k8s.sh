@@ -30,13 +30,13 @@ sed -i.bak "s#%envId%#${envId}#" ${deploymentArtifactsFolder}/*.yaml
 sed -i.bak "s#%tenant%#${tenant}#" ${deploymentArtifactsFolder}/*.yaml
 sed -i.bak "s#%envProvider%#${provider}#" ${deploymentArtifactsFolder}/*.yaml
 
-if [ $deploymentTemplate == "qube_qubeship_apis" ] || [ $deploymentTemplate == "qube_external_app_v1" ] ; then
+# if [ $deploymentTemplate == "qube_qubeship_apis" ] || [ $deploymentTemplate == "qube_external_app_v1" ] ; then
 cp $workspace/qube.yaml ${deploymentArtifactsFolder}/
 spiff merge ${deploymentArtifactsFolder}/env_merge_template.yaml ${deploymentArtifactsFolder}/qube.yaml > ${deploymentArtifactsFolder}/result_env.yaml
 sed -ibak 's#- {}$##g' ${deploymentArtifactsFolder}/result_env.yaml
 spruce merge --prune meta --prune ports --prune service_type --prune environment_variables ${deploymentArtifactsFolder}/result_env.yaml ${deploymentArtifactsFolder}/kube-nonservice-resources.template.yaml > ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml
 spruce merge --prune meta --prune ports --prune service_type --prune environment_variables ${deploymentArtifactsFolder}/result_env.yaml ${deploymentArtifactsFolder}/kube-service-resources.template.yaml > ${deploymentArtifactsFolder}/kube-service-resources.yaml
-fi
+# fi
 kubectl version
 kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml --record
 kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-service-resources.yaml --record
