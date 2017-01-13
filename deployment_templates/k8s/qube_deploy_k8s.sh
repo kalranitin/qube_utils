@@ -40,6 +40,6 @@ spruce merge --prune meta --prune ports --prune service_type --prune environment
 spruce merge --prune meta --prune ports --prune service_type --prune environment_variables ${deploymentArtifactsFolder}/result_env.yaml ${deploymentArtifactsFolder}/kube-service-resources.template.yaml > ${deploymentArtifactsFolder}/kube-service-resources.yaml
 # fi
 kubectl version
-kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml --server=${endpoint} --token ${token} --record
-kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-service-resources.yaml --server=${endpoint} --token ${token} --record
+kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml --server=${endpoint} --token ${token} --insecure-skip-tls-verify=true --record
+kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-service-resources.yaml --server=${endpoint} --token ${token} --insecure-skip-tls-verify=true --record
 
