@@ -14,6 +14,8 @@ envType=$8
 envId=$9
 tenant=${10}
 provider=${11}
+server=${11}
+token=${12}
 
 mkdir -p $deploymentArtifactsFolder
 
@@ -38,6 +40,6 @@ spruce merge --prune meta --prune ports --prune service_type --prune environment
 spruce merge --prune meta --prune ports --prune service_type --prune environment_variables ${deploymentArtifactsFolder}/result_env.yaml ${deploymentArtifactsFolder}/kube-service-resources.template.yaml > ${deploymentArtifactsFolder}/kube-service-resources.yaml
 # fi
 kubectl version
-kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml --record
-kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-service-resources.yaml --record
+kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-nonservice-resources.yaml --server ${server} --token ${token} --record
+kubectl --namespace=${deploymentNS} apply -f ${deploymentArtifactsFolder}/kube-service-resources.yaml --server ${server} --token ${token} --record
 
