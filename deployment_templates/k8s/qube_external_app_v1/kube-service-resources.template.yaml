@@ -7,6 +7,8 @@ metadata:
   namespace: %namespace%
 spec:
   ports: (( grab ports.service_ports ))
+  imagePullSecrets: 
+    - name: qubeship-partner-registry-key
   selector:
     app: %appName%
   type: ClusterIP
