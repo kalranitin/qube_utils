@@ -2,6 +2,8 @@ ports:
   container_ports:
     - name: https
       containerPort: 443
+    - name: http
+      containerPort: 80
       protocol: TCP
     -  <<: (( merge ))
 
