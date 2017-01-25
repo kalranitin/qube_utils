@@ -2,8 +2,8 @@ ports:
   container_ports:
     - name: https
       containerPort: 443
-    - name: https
-      containerPort: 443
+    - name: http
+      containerPort: 80
       protocol: TCP
     -  <<: (( merge ))
 
@@ -12,6 +12,10 @@ ports:
       protocol: TCP
       port: 443
       targetPort: 443
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
     -  <<: (( merge ))
 environment_variables :
    env :
